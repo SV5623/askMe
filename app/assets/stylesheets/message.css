@@ -1,0 +1,17 @@
+.message
+{
+    border: 1px solid grey;
+    padding:  10px 15px;
+}
+
+.message-notice
+{
+    background-color: aliceblue;
+    border-color: yellow;
+}
+
+.message-alert
+{
+    background-color: #ffd2d2;
+    border-color: #d00000;
+}

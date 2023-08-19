@@ -1,0 +1,24 @@
+<div class="container">
+  <p class="margin_top_small">
+    <%= link_to "Створити питання" , new_question_path , class: 'button button-main'%>
+  </p>
+
+  <p class="text-sm margin_top_small">
+    <%= render 'form' , question: @question%>
+  </p>  
+</div>
+
+<div class="container  margin_top_small">
+  <h2 class="title-lg">
+    <%= @questions.count%>
+    <%= inclination(@questions.count , 'питання' , 'запитання' , 'питань')%>
+  </h2>
+</div>
+
+<% @questions.each do |question|%>
+  <div class="margin_top_small container">
+    <%= render question%>
+  </div>
+<% end %>
+
+

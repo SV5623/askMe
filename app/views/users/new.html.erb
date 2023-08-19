@@ -1,0 +1,22 @@
+<div class="container">
+  <h2 class="title">Приєднуйся та розвивайся</h2>
+
+
+  <div class="margin_top_small">
+    <%= form_with model: @user do |form|%>
+      <p><%= form.label :name , 'Ваше ім''я'%></p>
+      <p><%= form.text_field :name , class: 'form-text-field'%></p>
+
+      <p class="margin_top_small"><%= form.label :nickname , 'Ваш нікнейм'%></p>
+      <p><%= form.text_field :nickname , class: 'form-text-field'%></p>
+
+      <p class="margin_top_small"><%= form.label :email %></p>
+      <p><%= form.text_field :email , class: 'form-text-field'%></p>
+
+      <p class="margin_top_small"><%= form.label :password %></p>
+      <p><%= form.password_field :password , class: 'form-text-field'%></p>
+
+      <p class="margin_top_log"><%= form.submit 'Зареєструватися' , class: 'button button-main' %></p>
+    <%end%>
+  </div>
+</div>

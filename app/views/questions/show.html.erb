@@ -1,0 +1,9 @@
+<div class="container">
+  <h2 class="title-lg margin_bottom_small"> Question<%= @question.id%> </h2>
+
+  <%= render 'question' , question: @question%>
+
+  <p class="margin_top_small">
+    <%= link_to "Всі питання" ,questions_path , class: 'button button-main'%>
+  </p>
+</div>

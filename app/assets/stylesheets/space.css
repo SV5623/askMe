@@ -1,0 +1,43 @@
+.margin_top_small
+{
+    margin-top: 0.6rem;
+}
+
+.margin_top_med
+{
+    margin-top: 1rem;
+}
+
+.margin_top_log
+{
+    margin-top: 1.75rem;
+}
+
+.margin_bottom_small
+{
+    margin-bottom: 0.6rem;
+}
+
+.margin_bottom_mad
+{
+    margin-bottom: 1rem;
+}
+
+.margin_bottom_log
+{
+    margin-bottom: 1.75rem;
+}
+
+.margin_right_small
+{
+    margin-right: 0.6em;
+}
+
+.margin_right_med
+{
+    margin-right: 1em;
+}
+.margin_right_long
+{
+    margin-right: 1.75em;
+}

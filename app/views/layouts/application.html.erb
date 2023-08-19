@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AskMe</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+
+    <div class="wrapper">
+      <div class="navbar">
+        <p class="title-sm text-bold"><%= link_to "Ask me!" , root_path%> </p>
+        <div>
+          <% if current_user.present?%>
+            <%= "@#{current_user.nickname}"%> 
+            <%= button_to 'Вийти' , session_path , method: :delete%>
+
+          <%else%>
+            <%= link_to 'Реєстрація' , new_user_path , class: 'button button-yellow margin_right_small'%>
+            <%= link_to 'Вхід' , new_session_path , class: 'button button-yellow'%>
+          <% end%>
+        </div>
+      </div>
+
+
+      <% if flash[:notice].present? %>
+        <p class="margin_bottom_small margin_top_small message message-notice ">
+          <%= flash[:notice]%>
+        </p>
+        <% elsif flash[:alert].present?%>
+        <p class="margin_bottom_small margin_top_small message message-notice ">
+          <%= flash[:alert]%>
+        </p>
+      <%end%>
+
+      
+      <%= yield %>
+    </div>
+  </body>
+</html>
