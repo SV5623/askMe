@@ -36,3 +36,8 @@ a , button
 .text-bold{
   font-weight: bold;
 }
+
+.text-red
+{
+  color: red;
+}

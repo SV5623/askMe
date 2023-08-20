@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   # root "articles#index"
  
   resources :questions
-  resources :users, only: %i[new create]
+  resources :users, only: %i[new create edit update destroy]
   resource :session, only: %i[new create destroy]
 end

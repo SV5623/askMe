@@ -1,0 +1,66 @@
+<div class="container">
+  <h2 class="title">Редагування користувача  </h2>
+
+  <% if @user.errors.any?%>
+    <div class="margin_top_small">
+      <% @user.errors.full_messages.each do |message|%>
+        <p class="margin_bottom_small"><%= message%> </p>
+      <% end %>
+    </div>
+  <%end%>
+
+  <div class="margin_top_small">
+    <%= form_with model: @user, data: {turbo: false} do |form|%> 
+      <p>
+        <%= form.label :name, 'Your name'  %>
+      </p>
+      <p>
+        <%= form.text_field :name, class: 'form-text-field' %>
+      </p>
+
+      <p class = 'margin_top_small'>
+        <%= form.label :nickname, "Your nick"  %>
+      </p>
+
+      <p>
+        <%= form.text_field :nickname, class: 'form-text-field' %>
+      </p>
+
+      <p class = 'margin_top_small'>
+        <%= form.label :email  %>
+      </p>
+      <p>
+        <%= form.text_field :email, class: 'form-text-field' %>
+      </p>
+
+      <p class = 'margin_top_small'>
+        <%= form.label :password  %>
+      </p>
+      <p>
+        <%= form.password_field :password, class: 'form-text-field'%>
+      </p>
+
+      <p class = 'margin_top_small'>
+        <%= form.label :password_confirmation  %>
+      </p>
+      <p>
+        <%= form.password_field :password_confirmation, class: 'form-text-field'%>
+      </p>
+
+
+      <p class = 'margin_top_log'>
+        <%= form.submit 'Confirm', class: 'button button-main'%>
+        <span class="text-sm "> або <%= link_to "повернутися" , :back%></span>
+      </p>     
+    <% end%>  
+  </div>
+
+
+  <div class="margin_top_log">
+    <%= button_to "Видалити профіль", user_path(@user),
+     method: :delete,
+     form: {data: {turbo_confirm: "Ви впевненні що хочете видалити свій профіль?"}},
+     class: 'text-red text-sm'%>
+
+  </div>
+</div>
